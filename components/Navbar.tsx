@@ -6,7 +6,7 @@ const Navbar = () => {
     const router = useRouter();
 
   return (
-    <div className="w-full text-primary-foreground z-[99999] bg-offmain p-2 px-3 flex justify-between items-center">
+    <div className="w-full text-primary-foreground z-[99999] bg-offmain p-2 px-3 flex justify-between items-center top-0">
         <h1 className="text-3xl font-medium">Will Graham</h1>
         <div>
             <Button size={"lg"} variant={"ghost"} onClick={() => {router.push('./')}}>

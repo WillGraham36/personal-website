@@ -10,6 +10,8 @@ import peak7 from "../../public/peak7.svg";
 
 import Image from 'next/legacy/image';
 import Navbar from '../../components/Navbar';
+import Header from './_components/Header';
+import ContactMe from './_components/ContactMe';
 
 const HomePage = () => {
   return (
@@ -34,6 +36,14 @@ const HomePage = () => {
             <Image src={peak3} alt="peaks" layout="fill" objectFit="cover" />
         </div>
       </ParallaxLayer>
+
+
+      <ParallaxLayer offset={0} speed={0.3}>
+        <div className='w-full h-full'>
+          <Header />
+        </div>
+      </ParallaxLayer>
+
 
       <ParallaxLayer offset={0} speed={0.7}>
         <div className="w-full h-full absolute bg-repeat-x">
@@ -64,15 +74,16 @@ const HomePage = () => {
 
       <ParallaxLayer offset={0} speed={0.5}>
         <div className='w-full h-full'>
-          <Navbar />
+          <Navbar/>
         </div>
-        <div className='w-full h-[50%] text-white border-2'></div>
+        <div className='w-full h-[50%]'>
+          <ContactMe/>
+        </div>
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.5}>
         <p className='border-2 h-full text-white'>Hi</p>
       </ParallaxLayer>
     </Parallax>
-
   )
 }
 
