@@ -11,8 +11,8 @@ const ContactMe = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="h-full w-full text-muted flex items-center justify-center flex-col">
-        <h1 className="text-muted font-medium text-[50px] underline-offset-8 underline">
+    <div className="w-full text-muted flex items-center justify-center flex-col">
+        <h1 className="text-muted font-medium text-[45px] border-b-2 px-8 mb-12">
             Contact Me
         </h1>
         <div className="flex flex-col gap-y-8 pt-4">

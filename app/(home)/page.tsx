@@ -11,7 +11,8 @@ import peak7 from "../../public/peak7.svg";
 import Image from 'next/legacy/image';
 import Navbar from '../../components/Navbar';
 import Header from './_components/Header';
-import ContactMe from './_components/ContactMe';
+import ContactMe from '../../components/ContactMe';
+import AboutMe from '../../components/AboutMe';
 
 const HomePage = () => {
   return (
@@ -76,12 +77,14 @@ const HomePage = () => {
         <div className='w-full h-full'>
           <Navbar/>
         </div>
-        <div className='w-full h-[50%]'>
+        <div className='w-full h-[50%] flex items-center'>
           <ContactMe/>
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.5}>
-        <p className='border-2 h-full text-white'>Hi</p>
+        <div className='w-full h-full'>
+          <AboutMe />
+        </div>
       </ParallaxLayer>
     </Parallax>
   )
