@@ -4,7 +4,7 @@ import Skills from "./_components/Skills"
 
 const AboutPage = () => {
   return (
-    <div className="bg-main h-screen w-full">
+    <div className="bg-main">
       <Navbar />
       <div className="pt-36 bg-main">
         <AboutMe/>

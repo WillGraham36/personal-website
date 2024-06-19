@@ -1,0 +1,29 @@
+{
+    "caprice": {
+        "name": "Caprice",
+        "title": "Caprice - A Notion Clone",
+        "description": "This is a Notion Clone adsfafafsdf sdafdsafa dafds fasafdsfadsfd fafs afdas fd a afdafdadsfafdsfdsa fd  dfsa fdsf dsafd s fddfs fds fd fds df afd sdf dsf afdsadfs afds fds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsd asd fasdf adfs afsd adfs asfd",
+        "image": "/capriceCover.png",
+        "technologies": ["React", "Typescript", "Next.js", "ConvexDB"],
+        "github": "https://github.com/WillGraham36/caprice-notion-clone",
+        "website": "https://caprice-note-taking-app.vercel.app/"
+    },
+    "food-finder": {
+        "name": "Food Finder",
+        "title": "Food Finder",
+        "description": "FOOD FINDER adsfafafsdf sdafdsafa dafds fasafdsfadsfd fafs afdas fd a afdafdadsfafdsfdsa fd  dfsa fdsf dsafd s fddfs fds fd fds df afd sdf dsf afdsadfs afds fds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsd asd fasdf adfs afsd adfs asfd",
+        "image": "/foodFinderCover.png",
+        "technologies": [],
+        "github": "https://github.com/WillGraham36/Food-Finder",
+        "website": ""
+    },
+    "spotify-artist-playlist":{
+        "name": "Spotify Artist Playlist Creator",
+        "title": "Spotify Artist Playlist Creator",
+        "description": " SPOTIFY adsfafafsdf sdafdsafa dafds fasafdsfadsfd fafs afdas fd a afdafdadsfafdsfdsa fd  dfsa fdsf dsafd s fddfs fds fd fds df afd sdf dsf afdsadfs afds fds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsdds sdf sdf  afdsaf  as asafdsasdf afsd fasd asfd fads afs fsd fd as fadsafds fda fad sfds afd sa fdsafds afd sf dssd faafd sfd sdf sdf sfd df df  ff afsd asd fasdf adfs afsd asd fasdf adfs afsd adfs asfd",
+        "image": "/spotifyArtistCreatorCover.png",
+        "technologies": [],
+        "github": "https://github.com/WillGraham36/Spotify-Artist-Playlist-Creator",
+        "website": ""
+    }
+}

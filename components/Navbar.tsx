@@ -14,16 +14,16 @@ const Navbar = () => {
             <h1 className="text-3xl font-medium">Will Graham</h1>
         }
         <div>
-            <Button size={size} variant={"ghost"} onClick={() => {router.push('./')}}>
+            <Button size={size} variant={"ghost"} onClick={() => {router.push("/")}}>
                 Home
             </Button>
-            <Button size={size} variant={"ghost"} onClick={() => {router.push("./projects")}}>
+            <Button size={size} variant={"ghost"} onClick={() => {router.push("/projects")}}>
                 Projects
             </Button>
-            <Button size={size} variant={"ghost"} onClick={() => {router.push("./about")}}>
+            <Button size={size} variant={"ghost"} onClick={() => {router.push("/about")}}>
                 About
             </Button>
-            <Button size={size} variant={"ghost"} onClick={() => {router.push("./contact")}}>
+            <Button size={size} variant={"ghost"} onClick={() => {router.push("/contact")}}>
                 Contact
             </Button>
         </div>

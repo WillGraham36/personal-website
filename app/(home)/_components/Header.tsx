@@ -13,7 +13,7 @@ const Header = () => {
             <h1 className="text-primary-foreground text-5xl md:text-8xl font-bold pb-4">
                 Hi, I'm Will
             </h1>
-            <h2 className="text-muted font-medium md:text-[35px] text-lg ">
+            <h2 className="text-muted font-medium md:text-[35px] text-lg leading-8">
                 I'm a Computer Science student at the University of Maryland <br/>and full-stack web developer
             </h2>
         </div>
