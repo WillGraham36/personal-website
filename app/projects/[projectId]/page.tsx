@@ -72,7 +72,7 @@ const ProjectPage = async ({
 						width={1024}
   						height={768}
 						alt="Caprice Cover Image" 
-						className="rounded-t-lg w-full h-full object-cover"
+						className="rounded-lg w-full h-full object-cover"
 					/>
 					<div className='flex items-center w-full h-full justify-center flex-col pt-6'>
 						<h1 className="text-muted font-medium text-[40px] md:text-[50px] border-b-2 text-center">
