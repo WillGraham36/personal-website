@@ -23,12 +23,8 @@ const ProjectPage = async ({
 }) => {
 
 
-	// const file = await fs.readFile(process.cwd() + '/app/projects/projects-list.json', 'utf8');
-	// const data = JSON.parse(file);
-	// const project = data[params.projectId];
 	const data = JSON.parse(JSON.stringify(ProjectData));
 	const project = data[params.projectId];
-
 	
 	// project fields
 	//
@@ -56,7 +52,7 @@ const ProjectPage = async ({
 						{project.description}
 					</h3>
 					<div className='w-full flex justify-center items-center flex-col md:flex-row gap-4 py-8'>
-						<a href={project.github}>
+						<a href={project.github} target='_blank'>
 							<Button 
 								size={hasWebsite ? "xl" : "xxl"} 
 								variant={'defaultBG'} 
@@ -65,7 +61,7 @@ const ProjectPage = async ({
 							</Button>
 						</a>
 						{hasWebsite && 
-							<a href="">
+							<a href={project.website} target='_blank'>
 								<Button size={"xl"} variant={'defaultBG'}>
 									Website
 								</Button>
