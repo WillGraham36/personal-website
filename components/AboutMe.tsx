@@ -20,10 +20,12 @@ const AboutMe = () => {
             </h3>
         </div>
         {!isMobile && 
-            <div className="p-5 rounded-lg mx-[10%] md:mx-[20%]">
-                <h3 className="text-muted font-medium text-lg md:text-[35px] md:leading-10 lg:text-[25px] xl:text-[35px] text-center">    
-                    <h3 className='underline underline-offset-4 pb-2'>Some fun facts about me: </h3>
-                    <span> {funFactString} </span>
+              <div className="p-5 rounded-lg mx-[10%] md:mx-[20%] text-muted font-medium text-lg md:text-[35px] md:leading-10 lg:text-[25px] xl:text-[35px] text-center">
+                <h3 className='underline underline-offset-4 pb-2 '>
+                    Some fun facts about me: 
+                </h3>
+                <h3>   
+                    {funFactString} 
                 </h3>
             </div>}
     </div>
