@@ -4,7 +4,7 @@ import { useMediaQuery } from 'usehooks-ts'
 const AboutMe = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
-    const aboutMeString = "I am a full-stack web developer studying Computer Science at the University of Maryland. I have experience with React, NextJS, and many other technologies. Currently I am looking for internships and other opportunities to further my career in software development"
+    const aboutMeString = "I am a full-stack web developer studying Computer Science at the University of Maryland. I have experience with React, NextJS, Java, Python, and many other technologies. Currently I am looking for internships and other opportunities"
 
     const funFactString = "I love hiking and being in nature, I often times code in the woods behind my dorm as I find it more relaxing than a library or my room. I also really enjoy playing video games and have a strong interest in modding them"
 
