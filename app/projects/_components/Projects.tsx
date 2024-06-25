@@ -1,7 +1,7 @@
 import Card from "./Card";
 import projectData from '../projects-list.json';
 
-const Projects = async () => {
+const Projects = () => {
 
     const data = projectData;
     // project fields
