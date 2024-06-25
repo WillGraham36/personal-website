@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 import React from 'react'
 
 const Skill = (name: string, src: string, whiteBg?: boolean) => {
     return (
         <div className='text-center font-medium text-xl text-muted'>
-            <img src={src} alt={name} width={100} className={cn('rounded-xl', whiteBg && 'bg-white') } />
+            <Image src={src} alt={name} width={100} height={100} className={cn('rounded-xl', whiteBg && 'bg-white') } />
             <h3 className='pt-4'>{name}</h3>
         </div>  
     )  
