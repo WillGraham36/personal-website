@@ -1,9 +1,11 @@
 import Card from "./Card";
-import projectData from '../projects-list.json';
+import { promises as fs } from 'fs';
 
-const Projects = () => {
+const Projects = async () => {
 
-    const data = projectData;
+    const file = await fs.readFile(process.cwd() + '/app/projects/projects-list.json', 'utf8');
+    const data: { [key: string]: any }[] = JSON.parse(file);
+
     // project fields
     //
     // id: string;
