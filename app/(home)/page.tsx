@@ -21,7 +21,7 @@ const HomePage = () => {
     const isMobile = useMediaQuery('(max-width: 425px)');
     const isTablet = useMediaQuery('(max-width: 768px)');
     function numPages() {
-        if (isMobile) return 2.9;
+        if (isMobile) return 3.0;
         if (isTablet) return 2.5;
         return 2.2;
     }
@@ -92,9 +92,9 @@ const HomePage = () => {
                 </div>
             </ParallaxLayer>
             <ParallaxLayer offset={1} speed={0.5}>
-                <div className='w-full pt-24'>
+                <div className='w-full mt-24'>
                     <AboutMe />
-                    <div className='pt-24'>
+                    <div className='pt-16'>
                         <Skills />
                     </div>
                 </div>
