@@ -1,5 +1,4 @@
 "use client";
-import { useMediaQuery } from 'usehooks-ts'
 
 const AboutMe = () => {
 
