@@ -25,82 +25,82 @@ const HomePage = () => {
         if (isTablet) return 2.5;
         return 2.2;
     }
-  return (
-      <Parallax pages={numPages()} style={{ top: '0', left: '0' }}
-        className='h-full block relative z-10 bg-main'
-    >
-        {/* ******** Layered Peaks ******** */}
-      <ParallaxLayer offset={0} speed={1.0}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak1} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
+    return (
+        <Parallax pages={numPages()} style={{ top: '0', left: '0' }}
+            className='h-full block relative z-10 bg-main'
+        >
+            
+            {/* ******** Layered Peaks ******** */}
 
-      <ParallaxLayer offset={0} speed={0.9}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak2} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
+            <ParallaxLayer offset={0} speed={1.0}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak1} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
 
-      <ParallaxLayer offset={0} speed={0.8}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak3} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
+            <ParallaxLayer offset={0} speed={0.9}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak2} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0.8}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak3} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0.3}>
+                <div className='w-full h-full'>
+                    <Header />
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0.7}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak4} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0.5}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak5} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0.5}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak6} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0} speed={0.5}>
+                <div className="w-full h-full absolute bg-repeat-x">
+                    <Image src={peak7} alt="peaks" layout="fill" objectFit="cover" />
+                </div>
+            </ParallaxLayer>
+
+            {/* ******** END Layered Peaks ******** */}
 
 
-      <ParallaxLayer offset={0} speed={0.3}>
-        <div className='w-full h-full'>
-          <Header />
-        </div>
-      </ParallaxLayer>
-
-
-      <ParallaxLayer offset={0} speed={0.7}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak4} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={0} speed={0.5}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak5} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={0} speed={0.5}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak6} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={0} speed={0.5}>
-        <div className="w-full h-full absolute bg-repeat-x">
-            <Image src={peak7} alt="peaks" layout="fill" objectFit="cover" />
-        </div>
-      </ParallaxLayer>
-
-      
-      {/* ******** Layered Peaks ******** */}
-
-      <ParallaxLayer offset={0} speed={0.5}>
-        <div className='w-full h-full'>
-          <Navbar/>
-        </div>
-        <div className='w-full h-[50%] flex items-center'>
-          <ContactMe/>
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={0.5}>
-        <div className='w-full pt-24'>
-          <AboutMe />
-          <div className='pt-24'>
-            <Skills />
-          </div>
-        </div>
-      </ParallaxLayer>
-    </Parallax>
-  )
+            <ParallaxLayer offset={0} speed={0.5}>
+                <div className='w-full h-full'>
+                    <Navbar/>
+                </div>
+                <div className='w-full h-[50%] flex items-center'>
+                    <ContactMe/>
+                </div>
+            </ParallaxLayer>
+            <ParallaxLayer offset={1} speed={0.5}>
+                <div className='w-full pt-24'>
+                    <AboutMe />
+                    <div className='pt-24'>
+                        <Skills />
+                    </div>
+                </div>
+            </ParallaxLayer>
+        </Parallax> 
+    )
 }
 
 export default HomePage
