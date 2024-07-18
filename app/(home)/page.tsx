@@ -13,10 +13,20 @@ import Navbar from '../../components/Navbar';
 import Header from './_components/Header';
 import ContactMe from '../../components/ContactMe';
 import AboutMe from '../../components/AboutMe';
+import Skills from '@/components/Skills';
+import { useMediaQuery } from 'usehooks-ts'
 
 const HomePage = () => {
+
+    const isMobile = useMediaQuery('(max-width: 425px)');
+    const isTablet = useMediaQuery('(max-width: 768px)');
+    function numPages() {
+        if (isMobile) return 2.9;
+        if (isTablet) return 2.5;
+        return 2.2;
+    }
   return (
-    <Parallax pages={2} style={{ top: '0', left: '0' }}
+      <Parallax pages={numPages()} style={{ top: '0', left: '0' }}
         className='h-full block relative z-10 bg-main'
     >
         {/* ******** Layered Peaks ******** */}
@@ -82,8 +92,11 @@ const HomePage = () => {
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.5}>
-        <div className='w-full h-full'>
+        <div className='w-full pt-24'>
           <AboutMe />
+          <div className='pt-24'>
+            <Skills />
+          </div>
         </div>
       </ParallaxLayer>
     </Parallax>
