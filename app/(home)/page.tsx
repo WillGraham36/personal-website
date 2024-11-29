@@ -11,95 +11,89 @@ import peak7 from "../../public/peak7.svg";
 import Image from 'next/legacy/image';
 import Navbar from '../../components/Navbar';
 import Header from './_components/Header';
-import ContactMe from '../../components/ContactMe';
-import AboutMe from '../../components/AboutMe';
-import Skills from '@/components/Skills';
-import { useMediaQuery } from 'usehooks-ts'
+import TechStack from '@/components/TechStack';
+import ExperienceAndEducation from '@/components/Experience';
+import Projects from '../projects/_components/Projects';
+
 
 const HomePage = () => {
+  let numPages = 2.15;
+  if (typeof window !== 'undefined') {
+    const screenWidth = window.innerWidth;
 
-    const isMobile = useMediaQuery('(max-width: 425px)');
-    const isTablet = useMediaQuery('(max-width: 768px)');
-    function numPages() {
-        if (isMobile) return 3.0;
-        if (isTablet) return 2.5;
-        return 2.2;
+    if (screenWidth <= 320) {
+      numPages = 3.95;
+    } else if (screenWidth <= 375) {
+      numPages = 3.65;
+    } else if (screenWidth <= 425) {
+      numPages = 3.40;
+    } else if (screenWidth <= 640) {
+      numPages = 3.25;
+    } else if (screenWidth <= 768) {
+      numPages = 2.80;
+    } else if (screenWidth <= 1024) {
+      numPages = 2.25;
+    } else if (screenWidth <= 1280) {
+      numPages = 2.25;
+    } else if (screenWidth <= 1536) {
+      numPages = 2.05;
+    } else {
+      numPages = 2.15;
     }
+  }
     return (
-        <Parallax pages={numPages()} style={{ top: '0', left: '0' }}
-            className='h-full block relative z-10 bg-main'
-        >
-            
-            {/* ******** Layered Peaks ******** */}
+      <Parallax pages={numPages} className='bg-main'>
+          
+          {/* ******** Layered Peaks ******** */}
 
-            <ParallaxLayer offset={0} speed={1.0}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak1} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={1.0}>
+                  <Image src={peak1} alt="peaks" layout="fill" objectFit="cover" />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.9}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak2} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.9}>
+                  <Image src={peak2} alt="peaks" layout="fill" objectFit="cover" />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.8}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak3} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.8}>
+                  <Image src={peak3} alt="peaks" layout="fill" objectFit="cover" />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.3}>
-                <div className='w-full h-full'>
-                    <Header />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.3}></ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.7}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak4} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.7}>
+                  <Image src={peak4} alt="peaks" layout="fill" objectFit="cover" className='z-20' />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.5}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak5} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.5}>
+                  <Image src={peak5} alt="peaks" layout="fill" objectFit="cover" />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.5}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak6} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.5}>
+                  <Image src={peak6} alt="peaks" layout="fill" objectFit="cover" />
+          </ParallaxLayer>
 
-            <ParallaxLayer offset={0} speed={0.5}>
-                <div className="w-full h-full absolute bg-repeat-x">
-                    <Image src={peak7} alt="peaks" layout="fill" objectFit="cover" />
-                </div>
-            </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.5}>
+                  <Image src={peak7} alt="peaks" layout="fill" objectFit="cover" />
+          </ParallaxLayer>
 
-            {/* ******** END Layered Peaks ******** */}
+          {/* ******** END Layered Peaks ******** */}
 
 
-            <ParallaxLayer offset={0} speed={0.5}>
-                <div className='w-full h-full'>
-                    <Navbar/>
-                </div>
-                <div className='w-full h-[50%] flex items-center'>
-                    <ContactMe/>
-                </div>
-            </ParallaxLayer>
-            <ParallaxLayer offset={1} speed={0.5}>
-                <div className='w-full mt-24'>
-                    <AboutMe />
-                    <div className='pt-16'>
-                        <Skills />
-                    </div>
-                </div>
-            </ParallaxLayer>
-        </Parallax> 
+          <ParallaxLayer offset={0} speed={0.5} >
+            <div className='h-full'>
+              <Navbar />
+              <Header/>
+            </div>
+            <div className='flex flex-col gap-8'>
+              <div className='w-full h-1/2 flex items-center border-8 border-main -mt-1'>
+                <TechStack />
+              </div>
+              <ExperienceAndEducation />
+              <Projects />
+            </div>
+          </ParallaxLayer>
+          
+      </Parallax> 
     )
 }
 

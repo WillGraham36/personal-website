@@ -1,6 +1,6 @@
 import AboutMe from "@/components/AboutMe"
 import Navbar from "@/components/Navbar"
-import Skills from "../../components/Skills"
+import Skills from "../../components/TechStack"
 
 const AboutPage = () => {
   return (
