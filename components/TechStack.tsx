@@ -24,26 +24,25 @@ const TechStack = () => {
         <div className='flex flex-col gap-1'>
           <h1 className='text-primary text-4xl font-medium'>Current Technologies</h1>
           <p className='text-neutral-500 hidden sm:block'>
-            I have experience using many different technologies to build modern, full-stack applications <br/>
-            Here are some of my main ones:
+            I have experience using many different technologies to build modern, full-stack application
           </p>
         </div>
         <div className='mt-4 gap-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4'>
+          <Tech name='NextJS' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg'/>
+          
+          <Tech name='TypeScript' src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' />
+
+          <Tech name='SpringBoot' src='https://raw.githubusercontent.com/michaelkolesidis/tech-icons/3f4f5fbef9a8e5dae8dc9cab983472a9222993b9/icons/spring/spring-original.svg'/>
+
+          <Tech name='Java' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg'/>
+
           <Tech name='React' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg'/>
 
-          <Tech name='NextJS' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg'/>
-
-          <Tech name='TypeScript' src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' />
-          
-          <Tech name='Tailwind' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg'/>
-
-          <Tech name='Git' src='https://raw.githubusercontent.com/michaelkolesidis/tech-icons/3f4f5fbef9a8e5dae8dc9cab983472a9222993b9/icons/git/git-original.svg'/>
+          <Tech name='PostgreSQL' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg'/>
 
           <Tech name='MongoDB' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain.svg'/>
 
-          <Tech name='ExpressJS' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg'/>
-
-          <Tech name='SpringBoot' src='https://raw.githubusercontent.com/michaelkolesidis/tech-icons/3f4f5fbef9a8e5dae8dc9cab983472a9222993b9/icons/spring/spring-original.svg'/>
+          <Tech name='GraphQL' src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg'/>
         </div>
       </div>
     </div>

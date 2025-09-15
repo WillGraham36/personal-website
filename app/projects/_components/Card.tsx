@@ -23,7 +23,7 @@ const Card = ({
   techList,
 }: CardProps) => {
   return (
-    <div className="max-w-lg max-h-svh border-2 border-neutral-800 rounded-lg hover:scale-105 transition-transform transform">
+    <Link href={websiteLink || githubLink} target="_blank" className="max-w-lg max-h-svh border-2 border-neutral-800 rounded-lg hover:scale-105 transition-transform transform">
       <div className="h-[240px] rounded-t-lg w-full">
         <Image 
           src={image} 
@@ -58,7 +58,7 @@ const Card = ({
         </div>
         
       </div>
-    </div>
+    </Link>
   )
 }
 

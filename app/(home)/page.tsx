@@ -22,23 +22,23 @@ const HomePage = () => {
     const screenWidth = window.innerWidth;
 
     if (screenWidth <= 320) {
-      numPages = 3.95;
+      numPages = 4.5;
     } else if (screenWidth <= 375) {
-      numPages = 3.65;
+      numPages = 4.25;
     } else if (screenWidth <= 425) {
-      numPages = 3.40;
+      numPages = 4.0;
     } else if (screenWidth <= 640) {
-      numPages = 3.25;
+      numPages = 4.0;
     } else if (screenWidth <= 768) {
-      numPages = 2.80;
+      numPages = 3.80;
     } else if (screenWidth <= 1024) {
-      numPages = 2.25;
+      numPages = 2.95;
     } else if (screenWidth <= 1280) {
-      numPages = 2.25;
+      numPages = 2.75;
     } else if (screenWidth <= 1536) {
-      numPages = 2.05;
+      numPages = 2.75;
     } else {
-      numPages = 2.15;
+      numPages = 2.55;
     }
   }
     return (

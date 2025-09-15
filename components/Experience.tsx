@@ -8,18 +8,20 @@ interface ExperienceProps {
   position: string;
   date: string;
   points: string[];
+  padding?: boolean;
 }
 const Experience: React.FC<ExperienceProps> = ({
   imgSrc,
   title,
   position,
   date,
-  points
+  points,
+  padding = false
 }) => {
   return (
     <div className='w-full flex gap-2 pl-[22px] pt-4 mb-4'>
       <div className='bg-main border-2 border-border rounded-full w-12 h-12 flex items-center flex-shrink-0 justify-center overflow-hidden'>
-        <Image src={imgSrc} alt={title} width={50} height={50} className='w-full h-full object-cover' />
+        <Image src={imgSrc} alt={title} width={50} height={50} className={`w-full h-full object-cover ${padding && 'p-2'}`} />
       </div>
       <div className='flex flex-col'>
         <h3 className='text-lg'>{title}</h3>
@@ -49,25 +51,37 @@ const ExperienceAndEducation = () => {
             <div className='border-2 rounded-md border-border flex flex-col relative gap-1'>
               <div className='w-12 min-h-full border-r-2 border-border absolute -z-10'></div>
               <Experience 
-                imgSrc='/lxaer-logo.png'
-                title='LX Aer'
-                position='Software Developer Intern'
-                date='August 2024 - Present'
+                imgSrc='/logos/radian-logo.png'
+                title='Radian'
+                position='Software Engineer Intern'
+                date='June – August 2025'
+                padding={true}
                 points={[
-                  'Improved page load times by 15% using Next.js dynamic imports to defer loading of non-critical components',
-                  'Developed an admin dashboard used by 8 organizations to manage 50+ users, which improved administrative efficiency by 25% with bulk imports from .csv files and user management features',
-                  'Integrated Google Drive file picker into React app, enabling seamless file selection and cloud storage access'
+                  'Reduced API errors and improved reliability by strengthening GraphQL endpoints in Express.js',
+                  'Expanded system flexibility by exposing GraphQL services as REST APIs with Prisma and PostgreSQL',
+                  'Streamlined workflows across teams by introducing and training staff on new project management software'
                 ]} />
+
               <Experience 
-                imgSrc='/constellation-logo.png'
-                title='Constellation Technologies'
-                position='Full-stack Developer Intern'
-                date='July 2024 - Present'
+                imgSrc='/logos/lxaer-logo.png'
+                title='LX Aer'
+                position='Software Engineer Intern'
+                date='August 2024 – June 2025'
                 points={[
-                  'Developed 3 dashboard pages using React and Firebase to assist student entrepreneurs in launching startups',
-                  'Increased mobile page load times by 20% by optimizing API calls and implementing mobile-first web design',
-                  'Reduced code delivery times by 4 days by restructuring the project directory and improving code organization',
-                  'Collaborated with a team of 11 developers using Git for code integration and to ensure smooth project delivery',
+                  'Accelerated site performance by optimizing multi-page load times through SSR, dynamic imports, and caching',
+                  'Improved reliability by fixing a long-standing auth bug that prevented encrypted content access',
+                  'Built and delivered an admin dashboard in React that empowered clients to manage users and reduced overhead'
+                ]} />
+
+              <Experience 
+                imgSrc='/logos/constellation-logo.png'
+                title='Constellation Technologies'
+                position='Frontend Engineer Intern'
+                date='July 2024 – January 2025'
+                points={[
+                  'Improved site speed and responsiveness by optimizing caching and reducing blocking requests',
+                  'Developed React/Firebase dashboards to help student entrepreneurs track operations and growth',
+                  'Cut delivery times in half by introducing modular project design for faster development cycles'
                 ]} />
             </div>
           </TabsContent>
@@ -77,13 +91,13 @@ const ExperienceAndEducation = () => {
             <div className='border-2 rounded-md border-border flex flex-col relative gap-1'>
               <div className='w-12 min-h-full border-r-2 border-border absolute -z-10'></div>
               <Experience
-                imgSrc='/umd-logo.png'
+                imgSrc='/logos/umd-logo.png'
                 title='University of Maryland, College Park'
                 position='Bachelor of Science in Computer Science; Specialization in machine learning'
                 date='August 2023 - May 2027'
                 points={[
-                  'Courses: Data Structures, Algorithms, Object Oriented Programming II, Organizaiton of Programming Languages',
-                  'GPA: 3.96'
+                  'Courses: Data Structures, Algorithms, Organization of Programming Languages, Web Programming, Databases',
+                  'GPA: 3.98 / 4.0'
                 ]} />
             </div>
           </TabsContent>

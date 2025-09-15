@@ -4,10 +4,8 @@ type Props = {
   isProjectPage?: boolean;
 }
 const Projects = (props: Props) => {
-
-
     return (
-      <div className='flex items-center justify-center w-full h-full'>
+      <div className='flex items-center justify-center w-full h-full mb-20'>
         <div className='w-full h-full max-w-6xl p-4'>
           { !props.isProjectPage && <div className='flex flex-col gap-1'>
             <h1 className='text-primary text-4xl font-medium'>Personal Projects</h1>
@@ -17,6 +15,14 @@ const Projects = (props: Props) => {
           </div>}
           <div className="mt-4 w-full flex justify-center">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <Card 
+                title="TerpPlanner" 
+                description="An automated four-year plan maker for UMD students to help them plan out their courses easily and more reliably" 
+                image="/projects/terpplanner.png"
+                githubLink="https://github.com/WillGraham36/four-year-plan-maker"
+                websiteLink="https://terpplanner.com"
+                techList={['Next.js', 'SpringBoot', 'PosgtgreSQL', 'TypeScript', 'Java', "Azure"]}
+              />
               <Card 
                 title="Echo Spot" 
                 description="An anonymous social media app for college students to interact with others in their area" 

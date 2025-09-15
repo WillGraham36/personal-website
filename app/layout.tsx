@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Will Graham | Portfolio",
   description: "Will Graham's personal portfolio",
+  icons: {
+    icon: "/favicon.svg", 
+  },
 };
 
 export default function RootLayout({
