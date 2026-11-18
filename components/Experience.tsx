@@ -22,7 +22,7 @@ const Experience: React.FC<ExperienceProps> = ({
 }) => {
   return (
     <div className='w-full flex items-start gap-2 pl-[22px] pr-4 pt-4 mb-4 text-left'>
-      <div className='bg-main border-2 border-border rounded-full w-12 h-12 flex items-center flex-shrink-0 justify-center overflow-hidden'>
+      <div className='bg-main border-2 border-border rounded-full w-12 h-12 flex items-center shrink-0 justify-center overflow-hidden'>
         {imgSrc ? (
           <Image src={imgSrc} alt={title} width={50} height={50} className={`w-full h-full object-cover ${padding ? 'p-2' : ''}`} />
         ) : (
