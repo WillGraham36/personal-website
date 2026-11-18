@@ -7,14 +7,14 @@ const Projects = (props: Props) => {
     return (
       <div className='flex items-center justify-center w-full h-full mb-20'>
         <div className='w-full h-full max-w-6xl p-4'>
-          { !props.isProjectPage && <div className='flex flex-col gap-1'>
+          { !props.isProjectPage && <div className='flex flex-col gap-1 text-center sm:text-left'>
             <h1 className='text-primary text-4xl font-medium'>Personal Projects</h1>
             <p className='text-neutral-500'>
               I have worked on many different projects to improve my skills and learn new technologies
             </p>
           </div>}
           <div className="mt-4 w-full flex justify-center">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card 
                 title="TerpPlanner" 
                 description="An automated four-year plan maker for UMD students to help them plan out their courses easily and more reliably" 

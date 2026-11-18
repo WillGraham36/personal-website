@@ -6,6 +6,7 @@ import Header from './_components/Header';
 import TechStack from '@/components/TechStack';
 import ExperienceAndEducation from '@/components/Experience';
 import Projects from '../projects/_components/Projects';
+import ContactMe from '@/components/ContactMe';
 
 // Depth controls decoration only; the document's height comes from its content.
 const mountains = [0.5, 0.42, 0.34, 0.26, 0.18, 0.1, 0];
@@ -47,7 +48,7 @@ const HomePage = () => {
 
   return (
     <main className="bg-main">
-      <section ref={heroRef} className="mountain-hero">
+      <section id="home" ref={heroRef} className="mountain-hero">
         <div className="mountain-scenery" aria-hidden="true">
           {mountains.map((depth, index) => (
             <div
@@ -66,7 +67,12 @@ const HomePage = () => {
       <div className="relative flex flex-col gap-8 bg-main">
         <TechStack />
         <ExperienceAndEducation />
-        <Projects />
+        <section id="projects" className="scroll-mt-6" aria-label="Personal projects">
+          <Projects />
+        </section>
+        <section id="contact" className="scroll-mt-6" aria-label="Contact">
+          <ContactMe />
+        </section>
       </div>
     </main>
   );

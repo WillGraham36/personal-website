@@ -21,7 +21,7 @@ const TechStack = () => {
   return (
     <div className='flex items-center justify-center w-full h-full'>
       <div className='w-full h-full max-w-6xl p-4'>
-        <div className='flex flex-col gap-1'>
+        <div className='flex flex-col gap-1 text-center sm:text-left'>
           <h1 className='text-primary text-4xl font-medium'>Current Technologies</h1>
           <p className='text-neutral-500 hidden sm:block'>
             I have experience using many different technologies to build modern, full-stack application

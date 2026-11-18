@@ -1,42 +1,31 @@
-"use client";
-import { Button } from "@/components/ui/button"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-import { useMediaQuery } from 'usehooks-ts'
+const contacts = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/will-graham-4623022a8/", icon: faLinkedinIn },
+  { label: "GitHub", href: "https://github.com/WillGraham36", icon: faGithub },
+  { label: "Email", href: "mailto:wgraham1@umd.edu", icon: faEnvelope },
+];
 
-const ContactMe = () => {
-    const isMobile = useMediaQuery("(max-width: 768px)");
-
-  return (
-    <div className="w-full text-muted flex items-center justify-center flex-col">
-        <h1 className="text-muted font-medium text-[45px] border-b-2 px-8 mb-12">
-            Contact Me
-        </h1>
-        <div className="flex flex-col gap-y-8 pt-4">
-            <Button variant={"darkGhost"} className="p-10 py-16 md:py-12  justify-center md:justify-start">
-                <a href="mailto:wgraham1@umd.edu" target="_blank" className="flex flex-col md:flex-row items-center px-3 gap-x-3">
-                    <FontAwesomeIcon icon={faEnvelope} size="3x" className="bg-[#1e3936] border-[#1e3936] rounded-full border-8 p-2 px-20 md:px-2" />
-                    <h2 className="md:text-[25px] text-md font-medium pt-4 md:pt-0">willgraham367@gmail.com</h2>
-                </a>
-            </Button>
-            <Button variant={"darkGhost"} className="p-10 py-16 md:py-12 justify-center md:justify-start">
-            <a href="https://github.com/WillGraham36" target="_blank" className="flex flex-col md:flex-row items-center px-3 gap-x-3">
-                    <FontAwesomeIcon icon={faGithub} size="3x" className="bg-[#1e3936] border-[#1e3936] rounded-full border-8 p-2 px-20 md:px-2"/>
-                    <h2 className="md:text-[25px] text-md font-medium pt-4 md:pt-0">github.com/WillGraham36</h2>
-                </a>
-            </Button>
-            <Button variant={"darkGhost"} className="p-10 py-16 md:py-12 justify-center md:justify-start">
-                <a href="https://www.linkedin.com/in/will-graham-4623022a8/" target="_blank" className="flex flex-col md:flex-row items-center px-3 gap-x-3">
-                    <FontAwesomeIcon icon={faLinkedinIn} size="3x" className="bg-[#1e3936] border-[#1e3936] rounded-full border-8 p-2 px-20 md:px-2"/>
-                    <h2 className="md:text-[25px] text-md font-medium pt-4 md:pt-0">linkedin.com/in/will-graham-4623022a8/</h2>
-                </a>
-            </Button>
-        </div>
+const ContactMe = () => (
+  <div className="mx-auto w-full max-w-6xl px-4 pb-16 text-center sm:text-left">
+    <h2 className="text-primary text-4xl font-medium mb-6">Contact Me</h2>
+    <div className="flex flex-wrap justify-center sm:justify-start gap-4">
+      {contacts.map(({ label, href, icon }) => (
+        <a
+          key={label}
+          href={href}
+          target={href.startsWith('https:') ? '_blank' : undefined}
+          rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}
+          className="inline-flex items-center gap-3 rounded-lg bg-offmain px-5 py-3 text-neutral-200 transition-colors hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+        >
+          <FontAwesomeIcon icon={icon} className="h-5 w-5" />
+          {label}
+        </a>
+      ))}
     </div>
-  )
-}
+  </div>
+);
 
-export default ContactMe
+export default ContactMe;

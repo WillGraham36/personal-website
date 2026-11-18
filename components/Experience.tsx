@@ -19,7 +19,7 @@ const Experience: React.FC<ExperienceProps> = ({
   padding = false
 }) => {
   return (
-    <div className='w-full flex gap-2 pl-[22px] pt-4 mb-4'>
+    <div className='w-full flex items-start gap-2 pl-[22px] pr-4 pt-4 mb-4 text-left'>
       <div className='bg-main border-2 border-border rounded-full w-12 h-12 flex items-center flex-shrink-0 justify-center overflow-hidden'>
         <Image src={imgSrc} alt={title} width={50} height={50} className={`w-full h-full object-cover ${padding && 'p-2'}`} />
       </div>
@@ -41,7 +41,7 @@ const ExperienceAndEducation = () => {
   return (
     <div className='flex items-center justify-center w-full h-full'>
       <div className='w-full h-full max-w-6xl p-4'>
-        <h1 className='text-primary text-4xl font-medium pb-4'>Experience & Education</h1>
+        <h1 className='text-primary text-4xl font-medium pb-4 text-center sm:text-left'>Experience & Education</h1>
         <Tabs defaultValue="Work" className="w-full">
           <TabsList className='w-full bg-offmain'>
             <TabsTrigger value="Work" className='w-full data-[state=active]:bg-primary-foreground'>Work</TabsTrigger>

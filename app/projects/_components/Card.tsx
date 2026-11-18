@@ -23,7 +23,7 @@ const Card = ({
   techList,
 }: CardProps) => {
   return (
-    <Link href={websiteLink || githubLink} target="_blank" className="min-w-0 max-w-lg border-2 border-neutral-800 rounded-lg md:hover:scale-[1.02] transition-transform transform">
+    <Link href={websiteLink || githubLink} target="_blank" className="min-w-0 w-full max-w-lg text-center sm:text-left border-2 border-neutral-800 rounded-lg hover:scale-[1.03] motion-reduce:hover:scale-100 motion-reduce:transition-none transition-transform transform">
       <div className="h-[240px] rounded-t-lg w-full">
         <Image 
           src={image} 
@@ -34,10 +34,10 @@ const Card = ({
         />
       </div>
           <div className="px-5 pb-5 pt-[13px] border-t-2 border-neutral-800 relative">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight w-3/4">{title}</h5>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight w-full sm:w-3/4">{title}</h5>
             <p className="mb-2 text-neutral-400">{description}</p>
 
-            <div className="absolute top-4 right-4 flex gap-2">
+            <div className="flex justify-center gap-2 sm:absolute sm:top-4 sm:right-4">
               <Link href={githubLink} target="_blank" className="hover:bg-neutral-600 p-[2px] w-7 h-7 rounded-full flex items-center justify-center transition-colors" title="Github">
                 <FontAwesomeIcon icon={faGithub} size="lg" className="text-white" />
               </Link>
@@ -51,7 +51,7 @@ const Card = ({
 
         <div>
           
-        <div className="px-5 pb-5 flex flex-wrap gap-2">
+        <div className="px-5 pb-5 flex flex-wrap justify-center sm:justify-start gap-2">
           {techList.map((tech, index) => (
             <div key={index} className="text-neutral-300 bg-neutral-800 px-3 py-1 rounded-2xl">{tech}</div>
           ))}
