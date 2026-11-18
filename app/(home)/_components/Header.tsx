@@ -1,5 +1,3 @@
-import Image from "next/image";
-import PFP from "../../../public/PFP.jpg";
 import { Button } from "@/components/ui/button";
 import { FileDown } from "lucide-react";
 import Link from "next/link";
@@ -19,44 +17,43 @@ const Header = () => {
           and a full-stack web developer
         </h2>
         <div className="w-full flex flex-row flex-wrap gap-2 items-center">
-          <Link href="/resume.pdf" target="_blank">
-            <Button className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] text-white">
+          <Button asChild className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] text-white">
+            <Link href="/resume.pdf" target="_blank">
               Resume <FileDown size={24} />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
-          <Link
-            href="https://www.linkedin.com/in/will-graham-4623022a8/"
+          <Button asChild className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] rounded-full">
+            <Link href="https://www.linkedin.com/in/will-graham-4623022a8/"
             target="_blank"
           >
-            <Button className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] rounded-full">
               <FontAwesomeIcon
                 icon={faLinkedinIn}
                 size="xl"
                 className="text-white"
               />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
-          <Link href="https://github.com/WillGraham36" target="_blank">
-            <Button className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] rounded-full">
+          <Button asChild className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] rounded-full">
+            <Link href="https://github.com/WillGraham36" target="_blank">
               <FontAwesomeIcon
                 icon={faGithub}
                 size="xl"
                 className="text-white"
               />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
-          <Link href="mailto:wgraham1@umd.edu" target="_blank">
-            <Button className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] rounded-full">
+          <Button asChild className="flex gap-2 bg-main hover:bg-[hsl(196,21%,15%)] rounded-full">
+            <Link href="mailto:wgraham1@umd.edu" target="_blank">
               <FontAwesomeIcon
                 icon={faEnvelope}
                 size="xl"
                 className="text-white"
               />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

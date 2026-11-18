@@ -23,7 +23,14 @@ const Card = ({
   techList,
 }: CardProps) => {
   return (
-    <Link href={websiteLink || githubLink} target="_blank" className="min-w-0 w-full max-w-lg text-center sm:text-left border-2 border-neutral-800 rounded-lg hover:scale-[1.03] motion-reduce:hover:scale-100 motion-reduce:transition-none transition-transform transform">
+    <article className="relative min-w-0 w-full max-w-lg text-center sm:text-left border-2 border-neutral-800 rounded-lg hover:scale-[1.03] motion-reduce:hover:scale-100 motion-reduce:transition-none transition-transform transform">
+      <Link
+        href={websiteLink || githubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View ${title}`}
+        className="absolute inset-0 z-10 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+      />
       <div className="h-[240px] rounded-t-lg w-full">
         <Image 
           src={image} 
@@ -38,11 +45,11 @@ const Card = ({
             <p className="mb-2 text-neutral-400">{description}</p>
 
             <div className="flex justify-center gap-2 sm:absolute sm:top-4 sm:right-4">
-              <Link href={githubLink} target="_blank" className="hover:bg-neutral-600 p-[2px] w-7 h-7 rounded-full flex items-center justify-center transition-colors" title="Github">
+              <Link href={githubLink} target="_blank" className="relative z-20 hover:bg-neutral-600 p-[2px] w-7 h-7 rounded-full flex items-center justify-center transition-colors" title="Github">
                 <FontAwesomeIcon icon={faGithub} size="lg" className="text-white" />
               </Link>
               {websiteLink ? (
-                <Link href={websiteLink} target="_blank" className="hover:bg-neutral-600 p-1 rounded-full flex items-center justify-center transition-colors" title="Project Website">
+                <Link href={websiteLink} target="_blank" className="relative z-20 hover:bg-neutral-600 p-1 rounded-full flex items-center justify-center transition-colors" title="Project Website">
                   <ExternalLink size={20} className="text-white" />
                 </Link>
               ) : null}
@@ -58,7 +65,7 @@ const Card = ({
         </div>
         
       </div>
-    </Link>
+    </article>
   )
 }
 

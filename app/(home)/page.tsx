@@ -8,8 +8,7 @@ import ExperienceAndEducation from '@/components/Experience';
 import Projects from '../projects/_components/Projects';
 import ContactMe from '@/components/ContactMe';
 
-// Depth controls decoration only; the document's height comes from its content.
-const mountains = [0.5, 0.42, 0.34, 0.26, 0.18, 0.1, 0];
+import MountainScenery from './_components/MountainScenery';
 
 const HomePage = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -49,16 +48,7 @@ const HomePage = () => {
   return (
     <main className="bg-main">
       <section id="home" ref={heroRef} className="mountain-hero">
-        <div className="mountain-scenery" aria-hidden="true">
-          {mountains.map((depth, index) => (
-            <div
-              key={index}
-              data-depth={depth}
-              className="mountain-layer"
-              style={{ backgroundImage: `url(/peak${index + 1}.svg)` }}
-            />
-          ))}
-        </div>
+        <MountainScenery />
         <div className="mountain-hero-content">
           <Navbar />
           <Header />
