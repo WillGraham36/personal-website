@@ -3,7 +3,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from 'next/image'
 
 interface ExperienceProps {
-  imgSrc: string;
+  imgSrc?: string;
+  initials?: string;
   title: string;
   position: string;
   date: string;
@@ -12,6 +13,7 @@ interface ExperienceProps {
 }
 const Experience: React.FC<ExperienceProps> = ({
   imgSrc,
+  initials,
   title,
   position,
   date,
@@ -21,7 +23,11 @@ const Experience: React.FC<ExperienceProps> = ({
   return (
     <div className='w-full flex items-start gap-2 pl-[22px] pr-4 pt-4 mb-4 text-left'>
       <div className='bg-main border-2 border-border rounded-full w-12 h-12 flex items-center flex-shrink-0 justify-center overflow-hidden'>
-        <Image src={imgSrc} alt={title} width={50} height={50} className={`w-full h-full object-cover ${padding && 'p-2'}`} />
+        {imgSrc ? (
+          <Image src={imgSrc} alt={title} width={50} height={50} className={`w-full h-full object-cover ${padding ? 'p-2' : ''}`} />
+        ) : (
+          <span aria-hidden="true" className="text-sm font-semibold text-neutral-200">{initials}</span>
+        )}
       </div>
       <div className='flex flex-col'>
         <h3 className='text-lg'>{title}</h3>
@@ -50,38 +56,58 @@ const ExperienceAndEducation = () => {
           <TabsContent value="Work">
             <div className='border-2 rounded-md border-border flex flex-col relative gap-1'>
               <div className='w-12 min-h-full border-r-2 border-border absolute -z-10'></div>
-              <Experience 
+              <Experience
+                imgSrc='/logos/capital-one-logo.jpg'
+                title='Capital One'
+                position='Software Engineer Intern'
+                date='June - August 2026'
+                points={[
+                  'Built a performance analysis tool used by 2,000+ engineers daily to uncover performance, SEO, and runtime issues missed by existing tooling across Card pages serving millions of customers',
+                  'Cut local build times by 80% (from 5s to 1s) by eliminating unnecessary rebuilds, reducing repeated delays during development and multi-step AI agent workflows',
+                  'Led a 5-engineer pod in architecting concurrent data flows across Chrome page, background, and storage contexts, ensuring reliable collection and persistence of continuous performance data',
+                  'Redesigned an internal live-testing tool with JSON validation, persistent drafts, and actionable errors, making manual feature testing faster and more reliable'
+                ]} />
+
+              <Experience
+                imgSrc='/logos/exiger-logo.jpg'
+                title='Exiger @ App Dev Club'
+                position='Technical Project Lead'
+                date='September 2025 - May 2026'
+                points={[
+                  "Led 12 engineers across front and backend development of Exiger's supplier portal, owning technical architecture and coordinating directly with company PMs and senior SWEs",
+                  'Architected an agentic web scraper that automated supplier onboarding by discovering company websites and generating structured profiles, saving hundreds of hours of manual research',
+                  'Designed a multi-organization access model enabling customer users to manage multiple supplier relationships while securely isolating supplier accounts, data, and workflows'
+                ]} />
+
+              <Experience
                 imgSrc='/logos/radian-logo.png'
                 title='Radian'
-                position='Software Engineer Intern'
-                date='June – August 2025'
+                position='Backend Engineer Intern'
+                date='June - August 2025'
                 padding={true}
                 points={[
-                  'Reduced API errors and improved reliability by strengthening GraphQL endpoints in Express.js',
-                  'Expanded system flexibility by exposing GraphQL services as REST APIs with Prisma and PostgreSQL',
-                  'Streamlined workflows across teams by introducing and training staff on new project management software'
+                  'Improved data accuracy by 35% by implementing rule-based input validation in GraphQL and Express.js, preventing submission of malformed business data',
+                  'Exposed GraphQL endpoints as RESTful APIs using Prisma and PostgreSQL, automating partner data submissions and replacing manual workflows',
+                  'Drove rollout of new data validation workflows across engineering and product teams, presenting technical implementation and business impact to company leadership'
                 ]} />
 
-              <Experience 
+              <Experience
+                imgSrc='/logos/mitre-logo.jpg'
+                title='MITRE @ App Dev Club'
+                position='Frontend Developer (Contract)'
+                date='February - May 2025'
+                points={[
+                  'Developed a frontend application for efficiently analyzing malware with Next.js, integrating with Elasticsearch and Kibana for secure file uploads, dynamic tool selection, and easy data visualization'
+                ]} />
+
+              <Experience
                 imgSrc='/logos/lxaer-logo.png'
                 title='LX Aer'
-                position='Software Engineer Intern'
-                date='August 2024 – June 2025'
-                points={[
-                  'Accelerated site performance by optimizing multi-page load times through SSR, dynamic imports, and caching',
-                  'Improved reliability by fixing a long-standing auth bug that prevented encrypted content access',
-                  'Built and delivered an admin dashboard in React that empowered clients to manage users and reduced overhead'
-                ]} />
-
-              <Experience 
-                imgSrc='/logos/constellation-logo.png'
-                title='Constellation Technologies'
                 position='Frontend Engineer Intern'
-                date='July 2024 – January 2025'
+                date='August 2024 - June 2025'
                 points={[
-                  'Improved site speed and responsiveness by optimizing caching and reducing blocking requests',
-                  'Developed React/Firebase dashboards to help student entrepreneurs track operations and growth',
-                  'Cut delivery times in half by introducing modular project design for faster development cycles'
+                  'Reduced multi-page load times by 30% using Next.js server-side rendering, dynamic imports, and API caching',
+                  'Eliminated client crashes when accessing encrypted content by resolving a legacy authentication token handling bug'
                 ]} />
             </div>
           </TabsContent>
