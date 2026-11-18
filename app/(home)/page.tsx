@@ -1,100 +1,75 @@
-"use client"
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import peak1 from "../../public/peak1.svg";
-import peak2 from "../../public/peak2.svg";
-import peak3 from "../../public/peak3.svg";
-import peak4 from "../../public/peak4.svg";
-import peak5 from "../../public/peak5.svg";
-import peak6 from "../../public/peak6.svg";
-import peak7 from "../../public/peak7.svg";
+"use client";
 
-import Image from 'next/legacy/image';
+import { useEffect, useRef } from 'react';
 import Navbar from '../../components/Navbar';
 import Header from './_components/Header';
 import TechStack from '@/components/TechStack';
 import ExperienceAndEducation from '@/components/Experience';
 import Projects from '../projects/_components/Projects';
 
+// Depth controls decoration only; the document's height comes from its content.
+const mountains = [0.5, 0.42, 0.34, 0.26, 0.18, 0.1, 0];
 
 const HomePage = () => {
-  let numPages = 2.15;
-  if (typeof window !== 'undefined') {
-    const screenWidth = window.innerWidth;
+  const heroRef = useRef<HTMLElement>(null);
 
-    if (screenWidth <= 320) {
-      numPages = 4.5;
-    } else if (screenWidth <= 375) {
-      numPages = 4.25;
-    } else if (screenWidth <= 425) {
-      numPages = 4.0;
-    } else if (screenWidth <= 640) {
-      numPages = 4.0;
-    } else if (screenWidth <= 768) {
-      numPages = 3.80;
-    } else if (screenWidth <= 1024) {
-      numPages = 2.95;
-    } else if (screenWidth <= 1280) {
-      numPages = 2.75;
-    } else if (screenWidth <= 1536) {
-      numPages = 2.75;
-    } else {
-      numPages = 2.55;
-    }
-  }
-    return (
-      <Parallax pages={numPages} className='bg-main'>
-          
-          {/* ******** Layered Peaks ******** */}
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
 
-          <ParallaxLayer offset={0} speed={1.0}>
-                  <Image src={peak1} alt="peaks" layout="fill" objectFit="cover" />
-          </ParallaxLayer>
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const layers = hero.querySelectorAll<HTMLElement>('[data-depth]');
+    let frame = 0;
 
-          <ParallaxLayer offset={0} speed={0.9}>
-                  <Image src={peak2} alt="peaks" layout="fill" objectFit="cover" />
-          </ParallaxLayer>
+    const update = () => {
+      frame = 0;
+      const { top, height } = hero.getBoundingClientRect();
+      const distance = motion.matches ? 0 : Math.min(height, Math.max(0, -top));
+      layers.forEach((layer) => {
+        layer.style.transform = `translate3d(0, ${distance * Number(layer.dataset.depth)}px, 0)`;
+      });
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    motion.addEventListener('change', schedule);
+    update();
 
-          <ParallaxLayer offset={0} speed={0.8}>
-                  <Image src={peak3} alt="peaks" layout="fill" objectFit="cover" />
-          </ParallaxLayer>
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      motion.removeEventListener('change', schedule);
+    };
+  }, []);
 
-          <ParallaxLayer offset={0} speed={0.3}></ParallaxLayer>
+  return (
+    <main className="bg-main">
+      <section ref={heroRef} className="mountain-hero">
+        <div className="mountain-scenery" aria-hidden="true">
+          {mountains.map((depth, index) => (
+            <div
+              key={index}
+              data-depth={depth}
+              className="mountain-layer"
+              style={{ backgroundImage: `url(/peak${index + 1}.svg)` }}
+            />
+          ))}
+        </div>
+        <div className="mountain-hero-content">
+          <Navbar />
+          <Header />
+        </div>
+      </section>
+      <div className="relative flex flex-col gap-8 bg-main">
+        <TechStack />
+        <ExperienceAndEducation />
+        <Projects />
+      </div>
+    </main>
+  );
+};
 
-          <ParallaxLayer offset={0} speed={0.7}>
-                  <Image src={peak4} alt="peaks" layout="fill" objectFit="cover" className='z-20' />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={0} speed={0.5}>
-                  <Image src={peak5} alt="peaks" layout="fill" objectFit="cover" />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={0} speed={0.5}>
-                  <Image src={peak6} alt="peaks" layout="fill" objectFit="cover" />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={0} speed={0.5}>
-                  <Image src={peak7} alt="peaks" layout="fill" objectFit="cover" />
-          </ParallaxLayer>
-
-          {/* ******** END Layered Peaks ******** */}
-
-
-          <ParallaxLayer offset={0} speed={0.5} >
-            <div className='h-full'>
-              <Navbar />
-              <Header/>
-            </div>
-            <div className='flex flex-col gap-8'>
-              <div className='w-full h-1/2 flex items-center border-8 border-main -mt-1'>
-                <TechStack />
-              </div>
-              <ExperienceAndEducation />
-              <Projects />
-            </div>
-          </ParallaxLayer>
-          
-      </Parallax> 
-    )
-}
-
-export default HomePage
+export default HomePage;

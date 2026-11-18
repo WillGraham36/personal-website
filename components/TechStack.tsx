@@ -7,11 +7,11 @@ interface TechProps {
 }
 const Tech: React.FC<TechProps> = ({ name, src }) => {
   return (
-    <div className='bg-[hsl(12,6%,17%)] hover:bg-[hsl(12,6%,23%)] transition-colors p-2 rounded-lg flex gap-4 w-full justify-center sm:justify-start items-center'>
-      <div className='rounded-md w-9 h-full flex items-center justify-center'>
+    <div className='bg-[hsl(12,6%,17%)] hover:bg-[hsl(12,6%,23%)] transition-colors p-2 rounded-lg flex gap-2 sm:gap-4 min-w-0 w-full justify-center sm:justify-start items-center'>
+      <div className='rounded-md w-7 sm:w-9 shrink-0 h-full flex items-center justify-center'>
         <Image src={src} alt={name} width={35} height={35} className='w-full object-cover' />
       </div>
-      <h2 className='text-lg text-primary'>{name}</h2>
+      <h2 className='text-sm sm:text-lg text-primary'>{name}</h2>
     </div>
   )
 }

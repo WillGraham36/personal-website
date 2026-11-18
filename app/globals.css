@@ -74,3 +74,43 @@
       @apply bg-background text-foreground;
     }
   }
+/* Keep the scenery out of document flow so content and tab changes size naturally. */
+.mountain-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+}
+
+.mountain-scenery {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.mountain-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.mountain-hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mountain-layer {
+    transform: none !important;
+  }
+  .mountain-hero .animate-fade-in {
+    animation: none;
+  }
+}
